@@ -17,12 +17,12 @@ class ThreadedClient:
         self.parent = parent
         self.musicplayer = musicplayer.MusicPlayer()
         self.gui = guiexample.Example(self.parent, self.queue, self.musicplayer, self.endApplication)
-        self.replier = zmqreply.MessageReceiver(self.queue, netport, portnumber)
+        #self.replier = zmqreply.MessageReceiver(self.queue, netport, portnumber)
 
         zmqreply.run = 1
-        self.zmqthread = threading.Thread(target = self.replier.loop)
+        #self.zmqthread = threading.Thread(target = self.replier.loop)
 
-        self.zmqthread.start()
+        #self.zmqthread.start()
 
         self.running = 1
         self.periodicCall()
